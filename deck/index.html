@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLUTO × Champion Spirit — Partnership Proposal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #F5B942;
+      --gold-light: #FAD27A;
+      --gold-dark: #D49A28;
+      --black: #0D0D0D;
+      --off-white: #F8F5F0;
+      --warm-gray: #E8E3DB;
+      --text-muted: #6B6457;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--black);
+      color: var(--off-white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 3rem;
+      background: rgba(13,13,13,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(245,185,66,0.15);
+    }
+
+    .nav-logo {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(248,245,240,0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── SECTIONS ── */
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 3rem;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      background-image: url('images/group-run.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      text-align: center;
+      padding-top: 10rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.8) 100%);
+      z-index: 0;
+    }
+
+    #hero .container { position: relative; z-index: 1; }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      line-height: 1.05;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: rgba(248,245,240,0.55);
+      max-width: 500px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .gold-line {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 3rem;
+    }
+
+    .scroll-hint {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(248,245,240,0.3);
+      margin-top: 4rem;
+    }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em { font-style: italic; color: var(--gold); }
+
+    .section-body {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(248,245,240,0.7);
+      max-width: 640px;
+      font-weight: 300;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--black); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .stat-row {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .stat {
+      border-left: 2px solid var(--gold);
+      padding-left: 1.5rem;
+    }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: rgba(248,245,240,0.5);
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .pull-quote {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--off-white);
+      border-top: 1px solid rgba(245,185,66,0.3);
+      padding-top: 2rem;
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: #111; }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      margin-top: 3rem;
+      background: rgba(245,185,66,0.15);
+    }
+
+    .exp-card {
+      background: #111;
+      padding: 2.5rem 2rem;
+    }
+
+    .exp-icon {
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .exp-card h3 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .exp-card p {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: rgba(248,245,240,0.55);
+      font-weight: 300;
+    }
+
+    /* ── PEOPLE ── */
+    #people { background: var(--black); }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .people-grid { grid-template-columns: 1fr; }
+    }
+
+    .person-portrait {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      margin-bottom: 0;
+      filter: grayscale(20%);
+      transition: filter 0.3s;
+    }
+
+    .person-portrait:hover { filter: grayscale(0%); }
+
+    .person-card {
+      border: 1px solid rgba(245,185,66,0.2);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .person-card-body { padding: 2rem; }
+
+    .person-card-body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 60px; height: 2px;
+      background: var(--gold);
+    }
+
+    .person-role {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .person-name {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .person-bio {
+      font-size: 0.875rem;
+      line-height: 1.8;
+      color: rgba(248,245,240,0.6);
+      font-weight: 300;
+    }
+
+    /* ── PHOTO STRIP ── */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin: 3rem 0;
+    }
+
+    .photo-strip img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── COMMUNITY PHOTO ── */
+    .community-photo {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      margin-bottom: 3rem;
+    }
+
+    /* ── AUDIENCE ── */
+    #audience { background: #0A0A0A; }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      border: 1px solid rgba(245,185,66,0.35);
+      padding: 0.4rem 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+    }
+
+    .audience-detail {
+      margin-top: 1rem;
+    }
+
+    .audience-detail p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: rgba(248,245,240,0.6);
+      font-weight: 300;
+    }
+
+    /* ── VALUE ── */
+    #value { background: var(--black); }
+
+    .value-list {
+      list-style: none;
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .value-item {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(245,185,66,0.1);
+    }
+
+    .value-num {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--gold);
+      opacity: 0.6;
+      padding-top: 0.2rem;
+    }
+
+    .value-content h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .value-content p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: rgba(248,245,240,0.55);
+      font-weight: 300;
+    }
+
+    /* ── PARTNERSHIP ── */
+    #partnership { background: #0D0D0D; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
+
+    .partnership-box {
+      padding: 2.5rem;
+    }
+
+    .partnership-box.give {
+      background: rgba(245,185,66,0.06);
+      border: 1px solid rgba(245,185,66,0.2);
+    }
+
+    .partnership-box.need {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .box-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .partnership-box h3 {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .checklist li {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: rgba(248,245,240,0.7);
+      font-weight: 300;
+    }
+
+    .check {
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    /* ── CLOSING ── */
+    #closing {
+      background: var(--black);
+      text-align: center;
+    }
+
+    .closing-title {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+
+    .closing-title em { font-style: italic; color: var(--gold); }
+
+    .closing-body {
+      font-size: 1rem;
+      color: rgba(248,245,240,0.55);
+      max-width: 520px;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .cta-btn:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .closing-contact {
+      margin-top: 4rem;
+      font-size: 0.8rem;
+      color: rgba(248,245,240,0.3);
+      letter-spacing: 0.05em;
+    }
+
+    .closing-contact a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 3rem;
+      border-top: 1px solid rgba(245,185,66,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      font-size: 0.7rem;
+      color: rgba(248,245,240,0.2);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── DIVIDER ── */
+    .gold-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin: 2rem 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1.25rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 6rem 1.5rem; }
+      .about-grid,
+      .people-grid,
+      .audience-grid,
+      .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
+      .experience-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <img src="images/logo.png" alt="Pluto" style="height: 28px; display: block;" />
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#people">Team</a></li>
+      <li><a href="#audience">Audience</a></li>
+      <li><a href="#value">What We Offer</a></li>
+      <li><a href="#partnership">Partnership</a></li>
+      <li><a href="#closing">Let's Talk</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <p class="hero-eyebrow">A partnership proposal — PLUTO × Champion Spirit</p>
+      <h1 class="hero-title">
+        Where performance<br />meets <em>presence.</em>
+      </h1>
+      <div class="gold-line"></div>
+      <p class="hero-sub">
+        PLUTO brings 10–20 of the world's most accomplished founders and executives to the Bahamas for an experience that redefines what peak performance actually looks like.
+      </p>
+      <p class="scroll-hint">Scroll to explore ↓</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <p class="section-label">Who we are</p>
+          <h2 class="section-title">Not a wellness retreat.<br /><em>An experience.</em></h2>
+          <p class="section-body">
+            PLUTO creates social fitness experiences that combine movement, indulgent food, and genuine community — challenging the restrictive norms of modern wellness culture. We believe performance isn't about restriction. It's about balance, rest, real food, and joy.
+          </p>
+          <div class="gold-divider"></div>
+          <p class="section-body">
+            Every location, every session, every meal is built around one conviction: that genuine performance and genuine rest are not in conflict. They were always meant to coexist.
+          </p>
+        </div>
+        <div>
+          <p class="pull-quote">
+            "Redefining what performance actually means: balance, rest, real food, community, and joy."
+          </p>
+          <div class="stat-row">
+            <div class="stat">
+              <div class="stat-num">10–20</div>
+              <div class="stat-label">Hand-selected attendees per retreat</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">5–7</div>
+              <div class="stat-label">Nights of curated programming</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">Exclusively curated founders & executives</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <p class="section-label">The retreat</p>
+      <h2 class="section-title">Six pillars.<br /><em>One unforgettable experience.</em></h2>
+      <div class="photo-strip">
+        <img src="images/hermione-running.jpg" alt="Pluto movement session" />
+        <img src="images/food-figs.jpg" alt="Pluto food — figs, yogurt, granola" />
+      </div>
+
+      <div class="experience-grid">
+        <div class="exp-card">
+          <div class="exp-icon">◎</div>
+          <h3>Movement</h3>
+          <p>Led by Hermione, professional athlete and coach, every session is designed to push and restore in equal measure. She meets everyone where they are and trains people to perform. Technical, intentional, and built around the belief that real performance starts with balance.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-icon">◎</div>
+          <h3>Food & Table</h3>
+          <p>Our chef Sara designs every meal to feel like a special occasion. Protein-rich, seasonal, and always generous — eaten together around the table.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-icon">◎</div>
+          <h3>Recovery & Rest</h3>
+          <p>High performers rarely give themselves permission to stop. PLUTO builds recovery in as a pillar, not an afterthought — because rest is where adaptation actually happens. From mobility to spa treatments, stillness and off time.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-icon">◎</div>
+          <h3>Intention</h3>
+          <p>No agenda slides. No optimisation frameworks. Just good people, good food, honest conversation, and the kind of joy that only shows up when the pressure is off. We move together, we eat together, we laugh together — and we leave with something that no productivity hack has ever delivered.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-icon">◎</div>
+          <h3>Community</h3>
+          <p>Every attendee arrives by invitation. What happens between them — over a training session, around the dinner table, on a walk back from the water — is something no itinerary can manufacture. The connections formed tend to outlast the trip, and reunite at the next one.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-icon">◎</div>
+          <h3>Place</h3>
+          <p>No matter where a PLUTO retreat takes place, the location is always part of the experience. With Champion Spirit, the retreat will be rooted in the exceptional surroundings of the Bahamas — where tranquility and performance meet, and reset happens when the environment insists on it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEOPLE -->
+  <section id="people">
+    <div class="container">
+      <p class="section-label">The team behind PLUTO</p>
+      <h2 class="section-title">Built by people who<br /><em>live it.</em></h2>
+      <div class="people-grid">
+        <div class="person-card">
+          <img class="person-portrait" src="images/hermione.jpg" alt="Hermione Plumptre" style="object-position: center center;" />
+          <div class="person-card-body">
+            <p class="person-role">Movement & Performance</p>
+            <h3 class="person-name">Hermione Plumptre</h3>
+            <p class="person-bio">
+              A professional 400m hurdler and adidas athlete, Hermione has been an athlete her entire life — playing Lacrosse for England before becoming one of Berlin's most recognised fitness coaches. Her programming is technical and demanding, always rooted in the belief that real performance comes from balance, not burnout.
+            </p>
+            <p class="person-bio" style="margin-top: 1rem;">
+              Founder of She Can Do It All, the first Female Coaches Empowerment Union. At Pluto, she is the movement architect behind the PLUTO Method.
+            </p>
+          </div>
+        </div>
+        <div class="person-card">
+          <img class="person-portrait" src="images/sara.jpg" alt="Sara Barto" style="object-position: center 15%;" />
+          <div class="person-card-body">
+            <p class="person-role">Food & Community</p>
+            <h3 class="person-name">Sara Barto</h3>
+            <p class="person-bio">
+              Trained at Columbia College Chicago, Sara came to food via film production — and that detour is what makes her exceptional. Today she works as a hospitality consultant, helping concepts find their culinary identity.
+            </p>
+            <p class="person-bio" style="margin-top: 1rem;">
+              Her cooking draws on the American Southwest, Korean culinary heritage, and years of hosting across cultures. At PLUTO, she is the reason the food is never an afterthought.
+            </p>
+          </div>
+        </div>
+        <div class="person-card">
+          <img class="person-portrait" src="images/carmen.jpg" alt="Carmen Jenny" style="object-position: center 20%;" />
+          <div class="person-card-body">
+            <p class="person-role">Brand & Growth</p>
+            <h3 class="person-name">Carmen Jenny</h3>
+            <p class="person-bio">
+              Former Co-Founder & CMO of Scripe, one of Germany's fastest-growing AI startups. Forbes 30 Under 30. A second-time founder who built a community of 40,000+ users in under 18 months with her first startup.
+            </p>
+            <p class="person-bio" style="margin-top: 1rem;">
+              Leader of Tomorrow (St. Gallen Symposium). Executive Lead, Sigma Squared Society. Carmen found Pluto as a guest before joining to lead brand and growth — taking the PLUTO Method from Berlin to the world.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIENCE -->
+  <section id="audience">
+    <div class="container">
+      <p class="section-label">Who attends</p>
+      <h2 class="section-title">The people in<br /><em>the room.</em></h2>
+      <img class="community-photo" src="images/community.jpg" alt="Pluto community" />
+      <div class="audience-grid">
+        <div>
+          <p class="section-body">
+            PLUTO retreats are invitation-only. Every attendee is a high-net-worth founder, executive, or accomplished professional — people accustomed to the best, who choose experiences for their quality, not their marketing.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Startup Founders</span>
+            <span class="tag">CEOs</span>
+            <span class="tag">Investors</span>
+            <span class="tag">Senior Executives</span>
+            <span class="tag">Creative Directors</span>
+            <span class="tag">High-Performance Athletes</span>
+          </div>
+        </div>
+        <div class="audience-detail">
+          <p>
+            These are guests who arrive with taste, spend without hesitation, and talk about the experiences that moved them. They are exactly the audience a partner club or destination wants to be in front of — not once, but repeatedly.
+          </p>
+          <div class="gold-divider"></div>
+          <p>
+            A PLUTO guest who discovers your property through this retreat is a potential future member. A future repeat guest. A word-of-mouth ambassador to a network of people exactly like them.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE -->
+  <section id="value">
+    <div class="container">
+      <p class="section-label">What we bring</p>
+      <h2 class="section-title">What PLUTO offers<br /><em>Champion Spirit.</em></h2>
+      <ul class="value-list">
+        <li class="value-item">
+          <span class="value-num">01</span>
+          <div class="value-content">
+            <h3>A first-mover advantage in the Bahamas</h3>
+            <p>This would be the first retreat of its kind run on the island — positioning Champion Spirit ahead of any competing members' club with a genuinely unique, high-status offer tied to the destination.</p>
+          </div>
+        </li>
+        <li class="value-item">
+          <span class="value-num">02</span>
+          <div class="value-content">
+            <h3>Access to high-net-worth potential members</h3>
+            <p>Every guest is a pre-qualified candidate for Champion Spirit membership. We are not bringing tourists — we are bringing exactly the calibre of person your club is built for.</p>
+          </div>
+        </li>
+        <li class="value-item">
+          <span class="value-num">03</span>
+          <div class="value-content">
+            <h3>Brand exposure and editorial content</h3>
+            <p>PLUTO retreats are documented. Professional photography and video capture the property, the light, the facilities. This content — distributed to our network of high-net-worth individuals — positions Champion Spirit beautifully.</p>
+          </div>
+        </li>
+        <li class="value-item">
+          <span class="value-num">04</span>
+          <div class="value-content">
+            <h3>A concept built by a professional athlete and a celebrated chef</h3>
+            <p>The people behind PLUTO are not influencers. Hermione is a professional athlete; Sara is a hospitality consultant and chef with a career built across film, restaurants, and culinary culture. The credibility they bring elevates everything they touch — including your property.</p>
+          </div>
+        </li>
+        <li class="value-item">
+          <span class="value-num">05</span>
+          <div class="value-content">
+            <h3>A recurring partnership opportunity</h3>
+            <p>We see this as the beginning of an ongoing collaboration — one that grows more valuable with each retreat. Our intention is to return annually, deepening the relationship between our communities and yours.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PARTNERSHIP -->
+  <section id="partnership">
+    <div class="container">
+      <p class="section-label">The partnership</p>
+      <h2 class="section-title">What we envision<br /><em>together.</em></h2>
+      <p class="section-body" style="margin-top: 0.5rem;">
+        We've designed this partnership to be as straightforward as possible. Here's what we give, and what we'd need in return.
+      </p>
+      <div class="two-col">
+
+        <div class="partnership-box give">
+          <p class="box-label">What PLUTO brings</p>
+          <h3>Our contribution</h3>
+          <ul class="checklist">
+            <li>
+              <span class="check">→</span>
+              <span>Full retreat concept, programming, and logistics managed end-to-end by PLUTO</span>
+            </li>
+            <li>
+              <span class="check">→</span>
+              <span>A curated group of 10–20 high-net-worth founders and executives</span>
+            </li>
+            <li>
+              <span class="check">→</span>
+              <span>Professional athlete-led fitness programming across 5–7 days</span>
+            </li>
+            <li>
+              <span class="check">→</span>
+              <span>Sara-curated culinary experiences for every group meal</span>
+            </li>
+            <li>
+              <span class="check">→</span>
+              <span>Editorial photography and video content featuring the property</span>
+            </li>
+            <li>
+              <span class="check">→</span>
+              <span>Brand exposure to PLUTO's network of high-net-worth individuals</span>
+            </li>
+            <li>
+              <span class="check">→</span>
+              <span>Active introduction of guests to Champion Spirit membership</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="partnership-box need">
+          <p class="box-label">What we ask for</p>
+          <h3>Venue requirements</h3>
+          <ul class="checklist">
+            <li>
+              <span class="check">→</span>
+              <span>Room block: 10–20 rooms for 5–7 nights at a negotiated group rate</span>
+            </li>
+            <li>
+              <span class="check">→</span>
+              <span>Exclusive or priority access to gym and fitness facilities during morning sessions</span>
+            </li>
+            <li>
+              <span class="check">→</span>
+              <span>Group spa access — either dedicated time slots or a curated spa programme for attendees</span>
+            </li>
+            <li>
+              <span class="check">→</span>
+              <span>Access to outdoor spaces — beach, pool, or grounds — for group activities and meals</span>
+            </li>
+            <li>
+              <span class="check">→</span>
+              <span>F&B collaboration: flexibility for our chef to work alongside your kitchen team for group dinners</span>
+            </li>
+            <li>
+              <span class="check">→</span>
+              <span>A venue liaison point of contact throughout the planning and retreat period</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section id="closing">
+    <div class="container" style="text-align:center;">
+      <p class="section-label">Next steps</p>
+      <h2 class="closing-title">
+        Let's build something<br /><em>remarkable.</em>
+      </h2>
+      <p class="closing-body">
+        We've already met. You understand what PLUTO is. This document is simply the beginning of a formal conversation — one we're excited to have with Champion Spirit.
+      </p>
+      <a class="cta-btn" href="mailto:howdy@plutoretreats.com">Get in touch</a>
+      <div class="closing-contact" style="margin-top: 3rem;">
+        <p><a href="mailto:howdy@plutoretreats.com">howdy@plutoretreats.com</a> &nbsp;·&nbsp; <a href="https://www.plutoretreats.com" target="_blank">plutoretreats.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Pluto</span>
+    <span class="footer-copy">© 2026 PLUTO Retreats. Confidential partnership proposal.</span>
+  </footer>
+
+</body>
+</html>
