@@ -930,5 +930,85 @@
     <span class="footer-copy">© 2026 PLUTO Retreats. Confidential partnership proposal.</span>
   </footer>
 
+  <!-- PASSWORD GATE -->
+  <div id="password-gate" style="
+    position: fixed;
+    inset: 0;
+    background: #0D0D0D;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-family: 'Inter', sans-serif;
+  ">
+    <img src="images/logo.png" alt="PLUTO" style="height: 36px; margin-bottom: 1rem;" />
+    <p style="color: rgba(248,245,240,0.4); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin: 0;">Confidential — Enter password to continue</p>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; width: 100%; max-width: 320px; padding: 0 1.5rem;">
+      <input
+        id="pw-input"
+        type="password"
+        placeholder="Password"
+        style="
+          width: 100%;
+          background: transparent;
+          border: 1px solid rgba(245,185,66,0.3);
+          color: #F8F5F0;
+          padding: 0.85rem 1.25rem;
+          font-size: 0.9rem;
+          font-family: 'Inter', sans-serif;
+          outline: none;
+          letter-spacing: 0.05em;
+          text-align: center;
+        "
+        onkeydown="if(event.key==='Enter') checkPassword()"
+      />
+      <p id="pw-error" style="color: #F5B942; font-size: 0.75rem; margin: 0; opacity: 0; transition: opacity 0.2s;">Incorrect password. Please try again.</p>
+      <button
+        onclick="checkPassword()"
+        style="
+          width: 100%;
+          background: transparent;
+          border: 1px solid #F5B942;
+          color: #F5B942;
+          padding: 0.85rem 1.25rem;
+          font-size: 0.7rem;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          font-family: 'Inter', sans-serif;
+          cursor: pointer;
+          transition: background 0.2s, color 0.2s;
+        "
+        onmouseover="this.style.background='#F5B942';this.style.color='#0D0D0D'"
+        onmouseout="this.style.background='transparent';this.style.color='#F5B942'"
+      >Enter</button>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      if (sessionStorage.getItem('pluto-auth') === 'true') {
+        document.getElementById('password-gate').style.display = 'none';
+      }
+    })();
+
+    function checkPassword() {
+      const input = document.getElementById('pw-input').value;
+      const error = document.getElementById('pw-error');
+      if (input === 'Champion-Spirit-PLUTO-26') {
+        sessionStorage.setItem('pluto-auth', 'true');
+        const gate = document.getElementById('password-gate');
+        gate.style.transition = 'opacity 0.4s';
+        gate.style.opacity = '0';
+        setTimeout(() => gate.style.display = 'none', 400);
+      } else {
+        error.style.opacity = '1';
+        document.getElementById('pw-input').value = '';
+        document.getElementById('pw-input').focus();
+      }
+    }
+  </script>
+
 </body>
 </html>
