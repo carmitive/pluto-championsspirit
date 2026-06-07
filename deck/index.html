@@ -14,7 +14,10 @@
       --gold: #F5B942;
       --gold-light: #FAD27A;
       --gold-dark: #D49A28;
-      --black: #0D0D0D;
+      --blue: #4B7CC5;
+      --blue-light: #6B96D8;
+      --blue-dim: rgba(75,124,197,0.12);
+      --black: #1A1816;
       --off-white: #F8F5F0;
       --warm-gray: #E8E3DB;
       --text-muted: #6B6457;
@@ -101,7 +104,7 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.8) 100%);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.62) 100%);
       z-index: 0;
     }
 
@@ -427,7 +430,7 @@
     }
 
     /* ── PARTNERSHIP ── */
-    #partnership { background: #0D0D0D; }
+    #partnership { background: #1A1816; }
 
     .two-col {
       display: grid;
@@ -512,8 +515,8 @@
 
     .cta-btn {
       display: inline-block;
-      border: 1px solid var(--gold);
-      color: var(--gold);
+      border: 1px solid var(--blue);
+      color: var(--blue-light);
       text-decoration: none;
       padding: 1rem 2.5rem;
       font-size: 0.75rem;
@@ -523,8 +526,8 @@
     }
 
     .cta-btn:hover {
-      background: var(--gold);
-      color: var(--black);
+      background: var(--blue);
+      color: #fff;
     }
 
     .closing-contact {
@@ -658,7 +661,7 @@
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="container">
-      <p class="section-label">The retreat</p>
+      <p class="section-label" style="color: var(--blue);">The retreat</p>
       <h2 class="section-title">Six pillars.<br /><em>One unforgettable experience.</em></h2>
       <div class="photo-strip">
         <img src="images/hermione-running.jpg" alt="Pluto movement session" style="object-position: center 15%;" />
@@ -761,7 +764,7 @@
   <!-- AUDIENCE -->
   <section id="audience">
     <div class="container">
-      <p class="section-label">Who attends</p>
+      <p class="section-label" style="color: var(--blue);">Who attends</p>
       <h2 class="section-title">The people in<br /><em>the room.</em></h2>
       <img class="community-photo" src="images/community.jpg" alt="Pluto community" />
       <div class="audience-grid">
@@ -839,7 +842,7 @@
   <!-- PARTNERSHIP -->
   <section id="partnership">
     <div class="container">
-      <p class="section-label">The partnership</p>
+      <p class="section-label" style="color: var(--blue);">The partnership</p>
       <h2 class="section-title">What we envision<br /><em>together.</em></h2>
       <p class="section-body" style="margin-top: 0.5rem;">
         We've designed this partnership to be as straightforward as possible. Here's what we give, and what we'd need in return.
@@ -881,32 +884,32 @@
           </ul>
         </div>
 
-        <div class="partnership-box need">
-          <p class="box-label">What we ask for</p>
+        <div class="partnership-box need" style="border-color: rgba(75,124,197,0.35); background: rgba(75,124,197,0.05);">
+          <p class="box-label" style="color: var(--blue-light);">What we ask for</p>
           <h3>Venue requirements</h3>
           <ul class="checklist">
             <li>
-              <span class="check">→</span>
+              <span class="check" style="color: var(--blue-light);">→</span>
               <span>Room block: 10–20 rooms for 7–10 nights at a negotiated group rate</span>
             </li>
             <li>
-              <span class="check">→</span>
+              <span class="check" style="color: var(--blue-light);">→</span>
               <span>Exclusive or priority access to gym and fitness facilities during morning sessions</span>
             </li>
             <li>
-              <span class="check">→</span>
+              <span class="check" style="color: var(--blue-light);">→</span>
               <span>Group spa access — either dedicated time slots or a curated spa programme for attendees</span>
             </li>
             <li>
-              <span class="check">→</span>
+              <span class="check" style="color: var(--blue-light);">→</span>
               <span>Access to outdoor spaces — beach, pool, or grounds — for group activities and meals</span>
             </li>
             <li>
-              <span class="check">→</span>
+              <span class="check" style="color: var(--blue-light);">→</span>
               <span>F&B collaboration: flexibility for our chef to work alongside your kitchen team for group dinners</span>
             </li>
             <li>
-              <span class="check">→</span>
+              <span class="check" style="color: var(--blue-light);">→</span>
               <span>A venue liaison point of contact throughout the planning and retreat period</span>
             </li>
           </ul>
@@ -943,7 +946,7 @@
   <div id="password-gate" style="
     position: fixed;
     inset: 0;
-    background: #0D0D0D;
+    background: #1A1816;
     z-index: 9999;
     display: flex;
     flex-direction: column;
@@ -989,7 +992,7 @@
           cursor: pointer;
           transition: background 0.2s, color 0.2s;
         "
-        onmouseover="this.style.background='#F5B942';this.style.color='#0D0D0D'"
+        onmouseover="this.style.background='#F5B942';this.style.color='#1A1816'"
         onmouseout="this.style.background='transparent';this.style.color='#F5B942'"
       >Enter</button>
     </div>
