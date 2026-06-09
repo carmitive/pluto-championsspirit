@@ -382,9 +382,11 @@
       background: var(--black);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10rem;
-      align-items: center;
+      gap: 0;
+      align-items: stretch;
+      padding: 0;
     }
+    #guests .guests-text { padding: 8rem 5rem 8rem 7vw; }
     #guests h2 {
       font-family: var(--serif);
       font-size: clamp(2rem, 3vw, 3.2rem);
@@ -418,9 +420,10 @@
     #guests .guest-img { overflow: hidden; }
     #guests .guest-img img {
       width: 100%;
-      height: 540px;
+      height: 100%;
+      min-height: 560px;
       object-fit: cover;
-      object-position: center top;
+      object-position: center 40%;
     }
 
 
@@ -788,7 +791,7 @@
       <div class="rule rule-center"></div>
       <h1>An Evening of<br><em>Movement & Taste</em></h1>
       <p class="meta">July 8, 2026 &nbsp;·&nbsp; Zazou Berlin &nbsp;·&nbsp; Mitte</p>
-      <p class="tagline">A Pluto evening at Zazou — where a holistic workout<br>meets exceptional food and real community in a historic space.</p>
+      <p class="tagline">A Pluto evening at Zazou — where a holistic workout meets exceptional food and real community in a historic space.</p>
     </div>
     <div class="scroll">
       <span>Scroll</span>
@@ -934,7 +937,7 @@
       <p class="eyebrow">Who Attends</p>
       <div class="rule"></div>
       <h2>A curated crowd<br>of doers.</h2>
-      <p class="intro">Each Pluto event is limited to 20–30 people — intentionally small, intentionally curated. Berlin's most driven founders, athletes, creatives and executives, who work hard and recover smarter. Tastemakers with real purchasing power and strong personal networks.</p>
+      <p class="intro">Each Pluto Supper Club event is limited to a curated group of people. Berlin's most driven founders, athletes, creatives and executives, who work hard and recover smarter. Tastemakers with genuine driven mindsets and strong personal networks.</p>
       <div class="traits">
         <div class="trait">Founders, CEOs, and early-stage operators</div>
         <div class="trait">Fitness-forward creative professionals</div>
@@ -945,7 +948,7 @@
       <p style="margin-top:2rem;font-size:.85rem;line-height:1.8;color:rgba(248,245,240,.55);font-style:italic;">A Pluto guest who discovers your space through this event is a potential future guest or partner — and a word-of-mouth ambassador to a network of people exactly like them.</p>
     </div>
     <div class="guest-img">
-      <img src="images/community-event.jpg" alt="Pluto community" style="object-position: center 60%;" />
+      <img src="images/community-event.jpg" alt="Pluto community" />
     </div>
   </section>
 
