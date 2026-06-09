@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "pluto-deck",
+      "runtimeExecutable": "ruby",
+      "runtimeArgs": ["-run", "-e", "httpd", "/tmp/pluto-deck", "-p", "3456"],
+      "port": 3456
+    },
+    {
+      "name": "pluto-zazou",
+      "runtimeExecutable": "ruby",
+      "runtimeArgs": ["-run", "-e", "httpd", "/tmp/pluto-zazou", "-p", "3457"],
+      "port": 3457
+    }
+  ]
+}

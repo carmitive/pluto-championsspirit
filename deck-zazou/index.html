@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pluto × Zazou · Supper Club Berlin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── TOKENS ─── */
+    :root {
+      --gold: #F5B942;
+      --gold-light: #FAD27A;
+      --black: #1A1816;
+      --black-rich: #0F0E0C;
+      --off-white: #F8F5F0;
+      --warm-gray: #E8E3DB;
+      --muted: #6B6457;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    /* ─── RESET ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--off-white); font-family: var(--sans); font-weight: 300; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── GLOBAL COMPONENTS ─── */
+    .eyebrow {
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .label {
+      font-size: .62rem;
+      font-weight: 500;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .rule {
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      margin: 1.4rem 0;
+    }
+    .rule-center { margin: 1.4rem auto; }
+
+    section { padding: 8rem 7vw; }
+    section.slim { padding: 5rem 7vw; }
+
+
+    /* ══════════════════════════════
+       1. HERO
+    ══════════════════════════════ */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0;
+      overflow: hidden;
+    }
+    #hero .bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/zazou-007.jpg');
+      background-size: cover;
+      background-position: center 40%;
+    }
+    #hero .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(10,9,8,.50) 0%,
+        rgba(10,9,8,.68) 55%,
+        rgba(10,9,8,.92) 100%
+      );
+    }
+    #hero .content {
+      position: relative;
+      z-index: 2;
+      padding: 7rem 2rem;
+      max-width: 860px;
+    }
+    #hero .logo-wrap { margin-bottom: 3rem; }
+    #hero .logo-wrap img {
+      height: 32px;
+      margin: 0 auto;
+      filter: brightness(0) invert(1);
+    }
+    #hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6.5vw, 6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: 1.75rem;
+    }
+    #hero h1 em { font-style: italic; color: var(--gold); }
+    #hero .meta {
+      font-size: .72rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      opacity: .8;
+      margin-bottom: 2rem;
+    }
+    #hero .tagline {
+      font-size: .95rem;
+      font-weight: 300;
+      color: rgba(248,245,240,.55);
+      line-height: 1.75;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    #hero .scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      opacity: .4;
+    }
+    #hero .scroll span {
+      font-size: .55rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+    }
+    #hero .scroll .line {
+      width: 1px;
+      height: 44px;
+      background: var(--off-white);
+    }
+
+
+    /* ══════════════════════════════
+       2. ABOUT
+    ══════════════════════════════ */
+    #about {
+      background: var(--black);
+      text-align: center;
+    }
+    #about .inner { max-width: 680px; margin: 0 auto; }
+    #about h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    #about p {
+      font-size: .95rem;
+      line-height: 1.9;
+      color: rgba(248,245,240,.65);
+    }
+    #about .pillars {
+      display: flex;
+      justify-content: center;
+      gap: 5rem;
+      margin-top: 4.5rem;
+      flex-wrap: wrap;
+    }
+    #about .pillar .icon {
+      font-size: 1.3rem;
+      margin-bottom: .75rem;
+    }
+    #about .pillar .name {
+      font-size: .62rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    #about .pillar .val {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--gold);
+      margin: .25rem 0 .3rem;
+    }
+
+
+    /* ══════════════════════════════
+       3. THE EVENING
+    ══════════════════════════════ */
+    #evening {
+      background: var(--black-rich);
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 85vh;
+    }
+    #evening .text-col {
+      padding: 8rem 7vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    #evening h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 3.5rem;
+    }
+    #evening .timeline { display: flex; flex-direction: column; gap: 2.75rem; }
+    #evening .step { display: grid; grid-template-columns: 70px 1fr; gap: 1.5rem; align-items: start; }
+    #evening .step .time {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+      padding-top: .1rem;
+    }
+    #evening .step .detail h4 {
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      margin-bottom: .45rem;
+    }
+    #evening .step .detail p {
+      font-size: .85rem;
+      line-height: 1.75;
+      color: rgba(248,245,240,.55);
+    }
+    #evening .img-col { position: relative; overflow: hidden; }
+    #evening .img-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+
+    /* ══════════════════════════════
+       4. THE VENUE
+    ══════════════════════════════ */
+    #venue { background: var(--black); }
+    #venue .top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+    #venue h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    #venue .venue-intro {
+      font-size: .92rem;
+      line-height: 1.9;
+      color: rgba(248,245,240,.65);
+      margin-bottom: 2.5rem;
+    }
+    #venue .facts { display: flex; gap: 3rem; flex-wrap: wrap; }
+    #venue .fact .val {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+    #venue .fact .key {
+      font-size: .58rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: .3rem;
+    }
+    #venue .exterior-img { overflow: hidden; }
+    #venue .exterior-img img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      object-position: center;
+    }
+    #venue .img-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    #venue .img-grid img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    #venue .img-grid img:nth-child(1) { object-position: center 20%; }
+    #venue .img-grid img:nth-child(2) { object-position: center 35%; }
+    #venue .img-grid img:nth-child(3) { object-position: center 30%; }
+    #venue .venue-highlight {
+      margin-top: 2.5rem;
+      padding: 1.75rem 2rem;
+      border-left: 2px solid var(--gold);
+      background: rgba(245,185,66,.05);
+    }
+    #venue .venue-highlight .hl-label {
+      font-size: .6rem;
+      font-weight: 600;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .6rem;
+    }
+    #venue .venue-highlight p {
+      font-size: .83rem;
+      line-height: 1.8;
+      color: rgba(248,245,240,.65);
+    }
+
+
+    /* ══════════════════════════════
+       5. THE TEAM
+    ══════════════════════════════ */
+    #team { background: var(--black-rich); }
+    #team .section-head { text-align: center; margin-bottom: 5rem; }
+    #team h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+    }
+    #team .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+    #team .card { display: flex; flex-direction: column; }
+    #team .card .photo {
+      position: relative;
+      width: 100%;
+      padding-top: 120%;
+      overflow: hidden;
+      margin-bottom: 1.75rem;
+    }
+    #team .card .photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #team .card .role {
+      font-size: .6rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .4rem;
+    }
+    #team .card h3 {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 400;
+      margin-bottom: .8rem;
+    }
+    #team .card p {
+      font-size: .82rem;
+      line-height: 1.8;
+      color: rgba(248,245,240,.55);
+    }
+
+
+    /* ══════════════════════════════
+       6. OUR GUESTS
+    ══════════════════════════════ */
+    #guests {
+      background: var(--black);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10rem;
+      align-items: center;
+    }
+    #guests h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    #guests .intro {
+      font-size: .92rem;
+      line-height: 1.9;
+      color: rgba(248,245,240,.65);
+      margin-bottom: 2.5rem;
+    }
+    #guests .traits { display: flex; flex-direction: column; gap: .9rem; }
+    #guests .trait {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: .82rem;
+      color: rgba(248,245,240,.7);
+      line-height: 1.5;
+    }
+    #guests .trait::before {
+      content: '';
+      flex-shrink: 0;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    #guests .guest-img { overflow: hidden; }
+    #guests .guest-img img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+
+    /* ══════════════════════════════
+       7. WHAT ZAZOU GAINS
+    ══════════════════════════════ */
+    #gain { background: var(--black-rich); }
+    #gain .section-head { text-align: center; max-width: 560px; margin: 0 auto 5rem; }
+    #gain h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+    }
+    #gain .benefits {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+    }
+    #gain .benefit {
+      padding: 3.5rem;
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.04);
+      transition: background .25s;
+    }
+    #gain .benefit:hover { background: rgba(245,185,66,.05); }
+    #gain .benefit .ico {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 1.5rem;
+      opacity: .6;
+    }
+    #gain .benefit h4 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: .7rem;
+    }
+    #gain .benefit p {
+      font-size: .82rem;
+      line-height: 1.8;
+      color: rgba(248,245,240,.52);
+    }
+
+
+    /* ══════════════════════════════
+       8. BRAND PARTNERS
+    ══════════════════════════════ */
+    #partners {
+      background: var(--black);
+      text-align: center;
+    }
+    #partners .inner { max-width: 720px; margin: 0 auto; }
+    #partners h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+    #partners .sub {
+      font-size: .85rem;
+      line-height: 1.75;
+      color: rgba(248,245,240,.5);
+      margin-bottom: 4rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #partners .logo-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+    #partners .partner-logo {
+      height: 38px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: .65;
+      transition: opacity .25s;
+    }
+    #partners .partner-logo:hover { opacity: 1; }
+    #partners .more-label {
+      margin-top: 2.5rem;
+      font-size: .62rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: rgba(248,245,240,.28);
+    }
+
+
+    /* ══════════════════════════════
+       9. THE ASK
+    ══════════════════════════════ */
+    #ask {
+      background: var(--black-rich);
+      position: relative;
+      overflow: hidden;
+    }
+    #ask .watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--serif);
+      font-size: 20vw;
+      font-weight: 400;
+      color: rgba(245,185,66,.025);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+    #ask .inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #ask h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    #ask .ask-intro {
+      font-size: .92rem;
+      line-height: 1.9;
+      color: rgba(248,245,240,.6);
+      margin-bottom: 3.5rem;
+    }
+    #ask .items {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+    #ask .item {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      padding: 2rem 2.5rem;
+      background: rgba(255,255,255,.025);
+      border-left: 2px solid transparent;
+      transition: border-color .2s, background .2s;
+    }
+    #ask .item:hover {
+      border-left-color: var(--gold);
+      background: rgba(245,185,66,.04);
+    }
+    #ask .item .num {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--gold);
+      padding-top: .1rem;
+      line-height: 1.2;
+    }
+    #ask .item h4 {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      margin-bottom: .45rem;
+    }
+    #ask .item p {
+      font-size: .83rem;
+      line-height: 1.75;
+      color: rgba(248,245,240,.5);
+    }
+    #ask .footnote {
+      font-size: .78rem;
+      font-style: italic;
+      color: rgba(248,245,240,.3);
+      line-height: 1.75;
+      padding: 0 1rem;
+    }
+
+
+    /* ══════════════════════════════
+       10. CLOSING
+    ══════════════════════════════ */
+    #closing {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0;
+      overflow: hidden;
+    }
+    #closing .bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/zazou-000.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    #closing .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(10,9,8,.75) 0%,
+        rgba(10,9,8,.82) 100%
+      );
+    }
+    #closing .content {
+      position: relative;
+      z-index: 2;
+      max-width: 580px;
+      padding: 7rem 2rem;
+    }
+    #closing h2 {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+    #closing h2 em { font-style: italic; color: var(--gold); }
+    #closing .sub {
+      font-size: .9rem;
+      color: rgba(248,245,240,.55);
+      line-height: 1.75;
+      margin-bottom: 3rem;
+    }
+    #closing .contact { display: flex; flex-direction: column; gap: .5rem; }
+    #closing .contact a {
+      color: var(--gold);
+      font-size: .88rem;
+      letter-spacing: .08em;
+    }
+    #closing .contact span {
+      color: rgba(248,245,240,.35);
+      font-size: .72rem;
+      letter-spacing: .12em;
+    }
+    #closing .footer-logo { margin-top: 3.5rem; opacity: .3; }
+    #closing .footer-logo img {
+      height: 22px;
+      margin: 0 auto;
+      filter: brightness(0) invert(1);
+    }
+
+    /* ══════════════════════════════
+       GIVE / ASK
+    ══════════════════════════════ */
+    #partnership { background: var(--black-rich); }
+    #partnership .section-head { text-align: center; max-width: 560px; margin: 0 auto 4rem; }
+    #partnership h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+    }
+    #partnership .p-intro {
+      font-size: .88rem;
+      line-height: 1.8;
+      color: rgba(248,245,240,.55);
+      margin-top: 1rem;
+    }
+    #partnership .p-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    #partnership .p-box {
+      padding: 3.5rem;
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.05);
+    }
+    #partnership .p-box.give { border-top: 2px solid var(--gold); }
+    #partnership .p-box.ask { border-top: 2px solid rgba(248,245,240,.2); }
+    #partnership .box-label {
+      font-size: .6rem;
+      font-weight: 600;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      margin-bottom: .6rem;
+    }
+    #partnership .p-box.give .box-label { color: var(--gold); }
+    #partnership .p-box.ask .box-label { color: rgba(248,245,240,.4); }
+    #partnership .p-box h3 {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+    #partnership .p-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
+    #partnership .p-list li {
+      display: grid;
+      grid-template-columns: 1.25rem 1fr;
+      gap: .75rem;
+      font-size: .83rem;
+      line-height: 1.65;
+      color: rgba(248,245,240,.7);
+      align-items: start;
+    }
+    #partnership .p-box.give .p-list li .arr { color: var(--gold); }
+    #partnership .p-box.ask .p-list li .arr { color: rgba(248,245,240,.3); }
+    #partnership .p-footnote {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: .78rem;
+      font-style: italic;
+      color: rgba(248,245,240,.3);
+      line-height: 1.75;
+    }
+
+    /* ══════════════════════════════
+       RESPONSIVE — MOBILE
+    ══════════════════════════════ */
+    @media (max-width: 768px) {
+      section { padding: 5rem 6vw; }
+      section.slim { padding: 3.5rem 6vw; }
+
+      /* evening */
+      #evening { grid-template-columns: 1fr; }
+      #evening .img-col { height: 55vw; min-height: 240px; }
+      #evening .img-col img { height: 100%; }
+
+      /* venue */
+      #venue .top { grid-template-columns: 1fr; gap: 3rem; }
+      #venue .exterior-img img { height: 260px; }
+      #venue .img-grid { grid-template-columns: 1fr 1fr; }
+      #venue .img-grid img:nth-child(3) { display: none; }
+      #venue .img-grid img { height: 200px; }
+
+      /* team */
+      #team .cards { grid-template-columns: 1fr; gap: 3.5rem; }
+      #team .card .photo { padding-top: 90%; }
+
+      /* guests */
+      #guests { grid-template-columns: 1fr; gap: 0; }
+      #guests .guest-img { display: none; }
+
+      /* gain */
+      #gain .benefits { grid-template-columns: 1fr; }
+      #gain .benefit { padding: 2.25rem; }
+
+      /* partnership */
+      #partnership .p-cols { grid-template-columns: 1fr; }
+      #partnership .p-box { padding: 2.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── 1. HERO ── -->
+  <section id="hero">
+    <div class="bg"></div>
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="logo-wrap">
+        <img src="images/logo.png" alt="PLUTO" />
+      </div>
+      <p class="eyebrow">Supper Club Berlin</p>
+      <div class="rule rule-center"></div>
+      <h1>An Evening of<br><em>Movement & Taste</em></h1>
+      <p class="meta">July 8, 2026 &nbsp;·&nbsp; Zazou Berlin &nbsp;·&nbsp; Mitte</p>
+      <p class="tagline">A Pluto evening at Zazou — where a holistic workout<br>meets exceptional food and real community in a historic space.</p>
+    </div>
+    <div class="scroll">
+      <span>Scroll</span>
+      <div class="line"></div>
+    </div>
+  </section>
+
+
+  <!-- ── 2. ABOUT ── -->
+  <section id="about">
+    <div class="inner">
+      <p class="eyebrow">What We Do</p>
+      <div class="rule rule-center"></div>
+      <h2>Redefining balance<br>to actual performance.</h2>
+      <p>The Pluto experience revolves around balance. We create events and experiences that put equal parts stock in both fitness and food, giving you the ability to test your limits and challenge your body, but also enjoy and savour good, delicious food and drink without the guilt — all in the company of great people.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="icon">◎</div>
+          <div class="val">Snack Runs</div>
+          <div class="name">Format 01</div>
+        </div>
+        <div class="pillar">
+          <div class="icon">◎</div>
+          <div class="val">Supper Clubs</div>
+          <div class="name">Format 02</div>
+        </div>
+        <div class="pillar">
+          <div class="icon">◎</div>
+          <div class="val">Retreats</div>
+          <div class="name">Format 03</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── 3. THE EVENING ── -->
+  <section id="evening">
+    <div class="text-col">
+      <p class="eyebrow">Supper Club at Zazou</p>
+      <div class="rule"></div>
+      <h2>One evening.<br>Three chapters.</h2>
+      <div class="timeline">
+        <div class="step">
+          <div class="time">17:00</div>
+          <div class="detail">
+            <h4>Doors Open</h4>
+            <p>Guests arrive. Drinks, introductions, and the energy of Zazou setting the tone for the evening ahead.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="time">17:30</div>
+          <div class="detail">
+            <h4>Move — with Hermione</h4>
+            <p>A guided workout and stretch session led by professional 400m hurdler and adidas athlete Hermione Plumptre. Athletic, mindful, and designed for all levels.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="time">19:30</div>
+          <div class="detail">
+            <h4>Dinner — by Sara</h4>
+            <p>A sit-down dinner crafted by chef Sara Barto. Seasonal, considered, rooted in American Southwest and Korean culinary traditions. The kind of food you talk about the next day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="img-col">
+      <img src="images/zazou-013.jpg" alt="The Loft at Zazou Berlin" />
+    </div>
+  </section>
+
+
+  <!-- ── 4. THE VENUE ── -->
+  <section id="venue">
+    <div class="top">
+      <div>
+        <p class="eyebrow">Why Zazou</p>
+        <div class="rule"></div>
+        <h2>A space to get together<br>with intention.</h2>
+        <p class="venue-intro">We visited Zazou before writing this and were amazed at first sight. The rooms with genuine character and real intentionality fuel the energy we aim to create for the Pluto experience. The Club is where Hermione runs the workout. The Kitchen is made for Sara's style of cooking. The Loft will be set up for the dinner. The Bar sets the tone the moment guests arrive. Every part of our evening maps naturally onto how Zazou was designed — and we are excited to find the perfect match for this evening.</p>
+        <div class="facts">
+          <div class="fact"><div class="val">The Club</div><div class="key">Workout & stretch</div></div>
+          <div class="fact"><div class="val">The Kitchen</div><div class="key">Sara's cooking</div></div>
+          <div class="fact"><div class="val">The Loft</div><div class="key">Dinner</div></div>
+          <div class="fact"><div class="val">The Bar</div><div class="key">Arrival & drinks</div></div>
+        </div>
+        <div class="venue-highlight">
+          <p class="hl-label">Zazou gets the floor</p>
+          <p>At arrival or during dinner, we give the Zazou team a dedicated moment to speak to guests — who you are, what's coming up, why this space exists. These are exactly the people who book private dinners, corporate events, and film shoots. We want them to know Zazou through you, not just through us.</p>
+        </div>
+      </div>
+      <div class="exterior-img">
+        <img src="images/zazou-001.jpg" alt="Zazou Berlin — exterior at night" />
+      </div>
+    </div>
+    <div class="img-grid">
+      <img src="images/zazou-008.jpg" alt="The Club" />
+      <img src="images/zazou-005.jpg" alt="The Bar" />
+      <img src="images/zazou-015.jpg" alt="The Kitchen" />
+    </div>
+  </section>
+
+
+  <!-- ── 5. THE TEAM ── -->
+  <section id="team">
+    <div class="section-head">
+      <p class="eyebrow">The Team</p>
+      <div class="rule rule-center"></div>
+      <h2>Hosted by people<br>who live it.</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="photo">
+          <img src="images/hermione.jpg" alt="Hermione Plumptre" style="object-position: center 15%;" />
+        </div>
+        <p class="role">Movement — Workout Lead</p>
+        <h3>Hermione Plumptre</h3>
+        <p>A former England lacrosse player and professional 400m hurdler ranked top 30 in the UK, Hermione has 15 years of coaching experience across Barry's, Soho House, adidas and on film sets for Warner Brothers and Sony Pictures. Her programming spans strength, HIIT, running, mobility and recovery — opening up new ways of moving and a deeper understanding of what your body is capable of. As a foodie athlete, the right nutrition has always mattered as much as the training. She also founded She Can Do It All, the first Female Coaches Empowerment Union.</p>
+      </div>
+      <div class="card">
+        <div class="photo">
+          <img src="images/sara.jpg" alt="Sara Barto" style="object-position: center center;" />
+        </div>
+        <p class="role">Food — Dinner Lead</p>
+        <h3>Sara Barto</h3>
+        <p>Sara's path to food is as rich as the cooking itself. She spent the early part of her career in film production before following her deeper calling to the kitchen in 2020, and has since supported restaurant concepts across Europe as a hospitality consultant. Her cooking draws from the ingredient-led traditions of the American Southwest and the precision of Korean culinary heritage — protein-centric, technically considered, and worth sitting down for. At PLUTO, Sara is the reason food is never an afterthought.</p>
+      </div>
+      <div class="card">
+        <div class="photo">
+          <img src="images/carmen.jpg" alt="Carmen Jenny" style="object-position: center 20%;" />
+        </div>
+        <p class="role">Brand & Growth</p>
+        <h3>Carmen Jenny</h3>
+        <p>Carmen has spent her career at the intersection of storytelling, community and growth. A second-time founder, she grew a community of 40k+ users in under 18 months before scaling Scripe to one of Germany's fastest-growing AI startups. Named Forbes 30 Under 30, Leader of Tomorrow by the St. Gallen Symposium, and Executive Lead at Sigma Squared Society. She found PLUTO as a guest — one of the original regulars — and never really left. At PLUTO she leads brand and growth, bringing the infrastructure to take the PLUTO Method from Berlin to the world.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── 6. OUR GUESTS ── -->
+  <section id="guests">
+    <div class="guests-text">
+      <p class="eyebrow">Who Attends</p>
+      <div class="rule"></div>
+      <h2>A curated crowd<br>of doers.</h2>
+      <p class="intro">Each Pluto event is limited to 20–30 people — intentionally small, intentionally curated. Berlin's most driven founders, athletes, creatives and executives, who work hard and recover smarter. Tastemakers with real purchasing power and strong personal networks.</p>
+      <div class="traits">
+        <div class="trait">Founders, CEOs, and early-stage operators</div>
+        <div class="trait">Fitness-forward creative professionals</div>
+        <div class="trait">Influencers and lifestyle content creators</div>
+        <div class="trait">International professionals based in Berlin</div>
+        <div class="trait">Loyal community — many are repeat attendees</div>
+      </div>
+      <p style="margin-top:2rem;font-size:.85rem;line-height:1.8;color:rgba(248,245,240,.55);font-style:italic;">A Pluto guest who discovers your space through this event is a potential future guest or partner — and a word-of-mouth ambassador to a network of people exactly like them.</p>
+    </div>
+    <div class="guest-img">
+      <img src="images/community-event.jpg" alt="Pluto community" style="object-position: center 60%;" />
+    </div>
+  </section>
+
+
+  <!-- ── 7. WHAT ZAZOU GAINS ── -->
+  <section id="gain">
+    <div class="section-head">
+      <p class="eyebrow">What we bring</p>
+      <div class="rule rule-center"></div>
+      <h2>More than an event.<br>A collaboration.</h2>
+    </div>
+    <div class="benefits">
+      <div class="benefit">
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="#F5B942" stroke-width="1.5">
+          <circle cx="16" cy="16" r="13"/>
+          <circle cx="16" cy="16" r="5"/>
+          <line x1="16" y1="3" x2="16" y2="11"/>
+          <line x1="16" y1="21" x2="16" y2="29"/>
+          <line x1="3" y1="16" x2="11" y2="16"/>
+          <line x1="21" y1="16" x2="29" y2="16"/>
+        </svg>
+        <h4>Professional Photography</h4>
+        <p>A dedicated photographer documents the full evening — the space, the atmosphere, the people. All content rights are Zazou's to keep. Expect a curated gallery of high-quality images across multiple rooms, moods, and moments.</p>
+      </div>
+      <div class="benefit">
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="#F5B942" stroke-width="1.5">
+          <path d="M16 4 L20 12 L29 13 L22.5 19.5 L24 28 L16 24 L8 28 L9.5 19.5 L3 13 L12 12 Z"/>
+        </svg>
+        <h4>Influencer & Tastemaker Reach</h4>
+        <p>Pluto events attract influencers and content creators with engaged, high-quality audiences. Zazou appears organically across posts, stories, and reels from voices that Berlin's lifestyle audience actually trusts.</p>
+      </div>
+      <div class="benefit">
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="#F5B942" stroke-width="1.5">
+          <rect x="4" y="8" width="24" height="16" rx="2"/>
+          <path d="M4 13 L28 13"/>
+          <path d="M10 13 L10 24"/>
+        </svg>
+        <h4>Brand Partner Co-Exposure</h4>
+        <p>Our partners — including Sun Matters and Loosh — are featured across all event collateral, digital communications, and on-site branding. Zazou is part of that premium association.</p>
+      </div>
+      <div class="benefit">
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="#F5B942" stroke-width="1.5">
+          <circle cx="12" cy="12" r="5"/>
+          <circle cx="22" cy="12" r="5"/>
+          <path d="M2 26 C2 20 7 17 12 17 C17 17 22 20 22 26"/>
+          <path d="M22 17 C27 17 30 20 30 26" stroke-dasharray="2 2"/>
+        </svg>
+        <h4>A Premium New Audience</h4>
+        <p>We bring 20–40 high-value guests who might not have been to Zazou before. This is a genuine introduction to a space they're likely to return to – for private dinners, corporate events, and their own bookings.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── 8. BRAND PARTNERS ── -->
+  <section id="partners" class="slim">
+    <div class="inner">
+      <p class="label">Presented in partnership with</p>
+      <div class="rule rule-center"></div>
+      <h2>Confirmed brand partners</h2>
+      <p class="sub">Pluto events are produced in partnership with carefully selected brands aligned with our values. More partners to be announced — all featured across event collateral, digital channels, and on-site.</p>
+      <div class="logo-row">
+        <img class="partner-logo" src="images/sunmatters-logo.avif" alt="Sun Matters" />
+        <img class="partner-logo" src="images/Loosh_Logos.svg" alt="Loosh" style="height:44px;filter:none;opacity:.65;" />
+      </div>
+      <p class="more-label">More to be confirmed</p>
+    </div>
+  </section>
+
+
+  <!-- ── 9. GIVE / ASK ── -->
+  <section id="partnership">
+    <div class="section-head">
+      <p class="eyebrow">The Partnership</p>
+      <div class="rule rule-center"></div>
+      <h2>What we envision<br>together.</h2>
+      <p class="p-intro">We've designed this partnership to be as straightforward as possible. Here's what we give, and what we'd need in return.</p>
+    </div>
+    <div class="p-cols">
+
+      <div class="p-box give">
+        <p class="box-label">What Pluto brings</p>
+        <h3>Our contribution</h3>
+        <ul class="p-list">
+          <li><span class="arr">→</span><span>Full event concept, programming and execution — zero operational load on the Zazou team</span></li>
+          <li><span class="arr">→</span><span>20–40 curated founders, creatives and high-value professionals who might not have been to Zazou before</span></li>
+          <li><span class="arr">→</span><span>A dedicated professional photographer for the full evening — all content rights go to Zazou, by mentioning photographer credits</span></li>
+          <li><span class="arr">→</span><span>Influencer and tastemaker attendance with organic social coverage across their channels</span></li>
+          <li><span class="arr">→</span><span>A dedicated moment for the Zazou team to speak to guests — turning attendees into future customers and repeat bookers</span></li>
+        </ul>
+      </div>
+
+      <div class="p-box ask">
+        <p class="box-label">What we ask for</p>
+        <h3>Venue requirements</h3>
+        <ul class="p-list">
+          <li><span class="arr">→</span><span>Access on July 8, 2026 from afternoon onwards — room spaces can still be defined</span></li>
+          <li><span class="arr">→</span><span>A barter arrangement in lieu of the standard day rate — we cover cleaning and operational costs in return</span></li>
+          <li><span class="arr">→</span><span>Flexibility for our chef Sara to use the Kitchen independently for the dinner</span></li>
+          <li><span class="arr">→</span><span>One point of contact at Zazou to coordinate setup, access, and logistics</span></li>
+        </ul>
+      </div>
+
+    </div>
+    <p class="p-footnote">We know an evening-only format is non-standard for Zazou — and we respect that. We see July 8 as the start of something we'd love to build together over time.</p>
+  </section>
+
+
+  <!-- ── 10. CLOSING ── -->
+  <section id="closing">
+    <div class="bg"></div>
+    <div class="overlay"></div>
+    <div class="content">
+      <p class="eyebrow">July 8, 2026 · Berlin</p>
+      <div class="rule rule-center"></div>
+      <h2>Let's build something<br><em>remarkable.</em></h2>
+      <p class="sub">The date is confirmed. The team is ready. We would love to make this happen — reach out and let's finalise the details together.</p>
+      <div class="contact">
+        <a href="mailto:howdy@plutoretreats.com">howdy@plutoretreats.com</a>
+        <span>plutoretreats.com</span>
+      </div>
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="PLUTO" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── PASSWORD GATE ── -->
+  <script>
+  (function(){
+    var PASSWORD = 'ZAZOU-PLUTO-26';
+    var KEY = 'pluto-zazou-auth';
+    if(sessionStorage.getItem(KEY) !== 'ok'){
+      var o = document.createElement('div');
+      o.style.cssText = 'position:fixed;inset:0;background:#0F0E0C;display:flex;align-items:center;justify-content:center;z-index:9999;font-family:Inter,system-ui,sans-serif;';
+      o.innerHTML =
+        '<div style="text-align:center;color:#F8F5F0;">' +
+          '<div style="font-family:\'Playfair Display\',Georgia,serif;font-size:1.1rem;letter-spacing:.3em;margin-bottom:.4rem;">PLUTO</div>' +
+          '<div style="font-size:.55rem;letter-spacing:.35em;text-transform:uppercase;color:#6B6457;margin-bottom:2.75rem;">× ZAZOU BERLIN</div>' +
+          '<input id="pw" type="password" placeholder="Enter password" ' +
+            'style="padding:.8rem 1.25rem;border:1px solid #2a2825;background:#1A1816;color:#F8F5F0;font-size:.88rem;border-radius:3px;outline:none;width:250px;text-align:center;letter-spacing:.1em;font-family:Inter,sans-serif;" />' +
+          '<br>' +
+          '<button onclick="check()" ' +
+            'style="margin-top:.85rem;padding:.75rem 2.25rem;background:#F5B942;color:#1A1816;border:none;font-weight:600;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;border-radius:3px;cursor:pointer;font-family:Inter,sans-serif;">Enter</button>' +
+          '<div id="err" style="color:#c0392b;margin-top:.8rem;font-size:.75rem;min-height:1rem;"></div>' +
+        '</div>';
+      document.body.appendChild(o);
+      document.getElementById('pw').addEventListener('keydown', function(e){ if(e.key==='Enter') check(); });
+      window.check = function(){
+        if(document.getElementById('pw').value === PASSWORD){
+          sessionStorage.setItem(KEY, 'ok');
+          o.remove();
+        } else {
+          document.getElementById('err').textContent = 'Incorrect password.';
+        }
+      };
+    }
+  })();
+  </script>
+
+</body>
+</html>
