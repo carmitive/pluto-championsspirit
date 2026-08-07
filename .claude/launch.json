@@ -13,5 +13,11 @@
       "runtimeArgs": ["-run", "-e", "httpd", "/tmp/pluto-zazou", "-p", "3457"],
       "port": 3457
     }
+    ,{
+      "name": "pluto-guhl",
+      "runtimeExecutable": "ruby",
+      "runtimeArgs": ["-run", "-e", "httpd", "/tmp/pluto-guhl", "-p", "3458"],
+      "port": 3458
+    }
   ]
 }
