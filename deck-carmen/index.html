@@ -43,6 +43,9 @@
     margin: 0 auto;
     padding: 0 20px;
   }
+  @media (max-width: 640px) {
+    .wrap { padding: 0 28px; }
+  }
 
   section { position: relative; }
 
@@ -62,6 +65,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+  @media (max-width: 640px) {
+    .nav-inner { padding: 18px 28px; }
   }
   .nav-name {
     font-family: var(--display);
@@ -228,8 +234,12 @@
   }
   @media (max-width: 800px) {
     .hero-grid { grid-template-columns: 1fr; }
-    .hero-photo-wrap { order: -1; margin-bottom: 30px; }
-    .photo-frame { max-width: 260px; }
+    .hero-photo-wrap { order: -1; margin-bottom: 30px; padding: 0 10px; }
+    .photo-frame { max-width: 400px; }
+    .photo-ring { max-width: 400px; }
+  }
+  @media (max-width: 460px) {
+    .hero-photo-wrap { padding: 0; }
   }
 
   /* ---------- SECTION HEADERS ---------- */
