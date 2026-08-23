@@ -345,33 +345,71 @@
   }
 
   /* ---------- PORTFOLIO ---------- */
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .portfolio-card {
+  .portfolio-list {
     display: flex;
     flex-direction: column;
+    gap: 44px;
+  }
+  .portfolio-case {
+    border-top: 1px solid var(--line);
+    padding-top: 32px;
+  }
+  .portfolio-case .tag-label {
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .portfolio-case h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin: 6px 0 8px;
+  }
+  .portfolio-case p {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+  .portfolio-case a.visit {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    width: fit-content;
+    padding-bottom: 2px;
+  }
+  .portfolio-case a.visit:hover { color: var(--pink); border-color: var(--pink); }
+  .shots-row {
+    display: flex;
+    flex-wrap: wrap;
     gap: 14px;
+    margin-top: 22px;
   }
-  .portfolio-card figure {
-    margin: 0;
-    border-radius: 4px;
-    overflow: hidden;
-    aspect-ratio: 4/3;
+  .shots-row .shot {
+    flex: 1 1 340px;
+    height: 260px;
     border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--off-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
-  .portfolio-card figure img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .shots-row .shot img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
   }
-  .portfolio-card .shot-placeholder {
+  .shots-row .shot-placeholder {
     width: 100%;
     height: 100%;
     border: 1.5px dashed var(--line);
-    background: var(--off-white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -383,33 +421,8 @@
     text-transform: uppercase;
     color: #B0AFAC;
   }
-  .portfolio-card .tag-label {
-    font-size: 0.76rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-  .portfolio-card h3 {
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
-  .portfolio-card p {
-    font-size: 0.9rem;
-    color: var(--ink-soft);
-  }
-  .portfolio-card a.visit {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--ink);
-    border-bottom: 1px solid var(--ink);
-    width: fit-content;
-    padding-bottom: 2px;
-  }
-  .portfolio-card a.visit:hover { color: var(--pink); border-color: var(--pink); }
-  @media (max-width: 800px) {
-    .portfolio-grid { grid-template-columns: 1fr; }
+  @media (max-width: 640px) {
+    .shots-row .shot { flex-basis: 100%; height: 220px; }
   }
 
   /* ---------- FOOTER ---------- */
@@ -490,7 +503,7 @@
   <div class="wrap">
     <div class="kicker">How I Work</div>
     <h2 class="section-title">The same process, every time</h2>
-    <p class="section-intro">No templates, no generic packages. Every project starts the same way – with a conversation, not a content calendar.</p>
+    <p class="section-intro">Every project starts the same way – with a conversation, not a content calendar.</p>
 
     <div class="offer-list">
       <div class="offer">
@@ -567,7 +580,7 @@
   <div class="wrap section-pad">
     <div class="kicker">Rates</div>
     <h2 class="section-title">Transparent, and always discussed together</h2>
-    <p class="section-intro">No fixed packages – every scope, timeline and rate is worked out together before we start.</p>
+    <p class="section-intro">Every scope, timeline and rate is worked out together, before we start.</p>
 
     <div class="rate-figure">€150 <span class="hl">–</span> €250<span style="font-size: 0.4em; font-weight: 500; color: rgba(247,246,244,0.68);"> / hour</span></div>
     <p class="rate-note">Depending on the service and scope. Exact pricing is always a conversation, not a price list.</p>
@@ -593,25 +606,34 @@
     <h2 class="section-title">A couple of examples</h2>
     <p class="section-intro">I haven't built dozens of websites – but here's what the same story-first process looks like when it becomes a site.</p>
 
-    <div class="portfolio-grid">
-      <div class="portfolio-card">
-        <figure><img src="images/work-novu.jpg" alt="Novu Office Proposal website"></figure>
+    <div class="portfolio-list">
+      <div class="portfolio-case">
         <span class="tag-label">Proposal · Web Design &amp; Copy</span>
         <h3>Novu Office Proposal</h3>
         <p>A LinkedIn growth proposal built the same story-first way – positioning, plan and design in one page.</p>
+        <div class="shots-row">
+          <div class="shot"><img src="images/work-novu.jpg" alt="Novu Office Proposal website – hero section"></div>
+        </div>
       </div>
-      <div class="portfolio-card">
-        <figure><img src="images/work-pluto-championspirit.jpg" alt="PLUTO × Champion Spirit website"></figure>
+      <div class="portfolio-case">
         <span class="tag-label">Partner Pitch · Web Design &amp; Copy</span>
         <h3>PLUTO × Champion Spirit</h3>
         <p>A full partner-pitch website built from scratch – positioning, story and design in one gated site.</p>
         <a class="visit" href="https://pluto-championsspirit.vercel.app/" target="_blank" rel="noopener">View the site →</a>
+        <div class="shots-row">
+          <div class="shot"><img src="images/work-pluto-championspirit.jpg" alt="PLUTO × Champion Spirit – hero section"></div>
+          <div class="shot"><img src="images/work-pluto-championspirit-2.jpg" alt="PLUTO × Champion Spirit – six pillars section"></div>
+          <div class="shot"><img src="images/work-pluto-championspirit-3.jpg" alt="PLUTO × Champion Spirit – the people in the room section"></div>
+        </div>
       </div>
-      <div class="portfolio-card">
-        <figure><img src="images/work-pluto-newsite.jpg" alt="New PLUTO website"></figure>
+      <div class="portfolio-case">
         <span class="tag-label">Brand Website · Web Design &amp; Copy</span>
         <h3>New PLUTO Website</h3>
         <p>The next iteration of PLUTO's own site – not live yet, currently in design.</p>
+        <div class="shots-row">
+          <div class="shot"><img src="images/work-pluto-newsite.jpg" alt="New PLUTO website – hero section"></div>
+          <div class="shot"><img src="images/work-pluto-newsite-2.jpg" alt="New PLUTO website – three pillars section"></div>
+        </div>
       </div>
     </div>
   </div>
