@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carmen Jenny — Services &amp; Rates</title>
+<title>Carmen Jenny – Services &amp; Rates</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -93,7 +93,14 @@
     color: var(--ink-soft);
   }
   .nav-links a:hover { color: var(--ink); }
-  .nav-links a.active { color: var(--ink); }
+  .nav-links a.page-link {
+    color: var(--pink);
+    background: var(--pink-dim);
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+  .nav-links a.page-link:hover { color: var(--ink); background: var(--yellow-dim); }
+  .nav-links a.active { color: var(--ink); background: var(--yellow-dim); }
   @media (max-width: 640px) {
     .nav-links { display: none; }
   }
@@ -291,7 +298,7 @@
   .rate-figure {
     font-family: var(--display);
     font-weight: 600;
-    font-size: clamp(2.6rem, 6vw, 4rem);
+    font-size: clamp(1.8rem, 3.6vw, 2.6rem);
     letter-spacing: -0.01em;
     margin-bottom: 8px;
   }
@@ -340,18 +347,41 @@
   /* ---------- PORTFOLIO ---------- */
   .portfolio-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
   .portfolio-card {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-top: 2px solid var(--ink);
-    border-radius: 4px;
-    padding: 28px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
+  }
+  .portfolio-card figure {
+    margin: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    border: 1px solid var(--line);
+  }
+  .portfolio-card figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .portfolio-card .shot-placeholder {
+    width: 100%;
+    height: 100%;
+    border: 1.5px dashed var(--line);
+    background: var(--off-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #B0AFAC;
   }
   .portfolio-card .tag-label {
     font-size: 0.76rem;
@@ -363,26 +393,14 @@
   .portfolio-card h3 {
     font-family: var(--display);
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .portfolio-card p {
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     color: var(--ink-soft);
   }
-  .portfolio-card .stat {
-    font-size: 0.83rem;
-    font-weight: 600;
-    color: var(--ink);
-    background: var(--off-white);
-    border: 1px solid var(--line);
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 100px;
-    width: fit-content;
-  }
   .portfolio-card a.visit {
-    margin-top: auto;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 600;
     color: var(--ink);
     border-bottom: 1px solid var(--ink);
@@ -390,7 +408,7 @@
     padding-bottom: 2px;
   }
   .portfolio-card a.visit:hover { color: var(--pink); border-color: var(--pink); }
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     .portfolio-grid { grid-template-columns: 1fr; }
   }
 
@@ -454,7 +472,7 @@
       <a href="index.html#work">Work With Me</a>
       <a href="index.html#built">What I've Built</a>
       <a href="index.html#ways">Ways to Collaborate</a>
-      <a href="services.html" class="active">Services &amp; Rates</a>
+      <a href="services.html" class="page-link active">Services &amp; Rates ↗</a>
       <a href="services.html#contact">Contact</a>
     </nav>
   </div>
@@ -464,7 +482,7 @@
   <div class="wrap">
     <div class="eyebrow">Services &amp; Rates</div>
     <h1 class="hero-title">One process. <span class="accent">Three places</span> it can go.</h1>
-    <p class="hero-sub">Whether it ends up on LinkedIn, Instagram or your own website, I build it the same way — starting with your story, not your channels. Here's exactly how I work, and what it costs.</p>
+    <p class="hero-sub">Whether it ends up on LinkedIn, Instagram or your own website, I build it the same way – starting with your story, not your channels. Here's exactly how I work, and what it costs.</p>
   </div>
 </section>
 
@@ -472,35 +490,35 @@
   <div class="wrap">
     <div class="kicker">How I Work</div>
     <h2 class="section-title">The same process, every time</h2>
-    <p class="section-intro">No templates, no generic packages. Every project starts the same way — with a conversation, not a content calendar.</p>
+    <p class="section-intro">No templates, no generic packages. Every project starts the same way – with a conversation, not a content calendar.</p>
 
     <div class="offer-list">
       <div class="offer">
         <div class="offer-num">01</div>
         <div>
           <h3>Deep-Dive Interview</h3>
-          <p>An unscripted, recorded conversation to understand your story — where you come from, what you've actually done, and why it matters. This becomes the raw material for everything that follows.</p>
+          <p>An unscripted, recorded conversation to understand your story – where you come from, what you've actually done, and why it matters. This becomes the raw material for everything that follows.</p>
         </div>
       </div>
       <div class="offer">
         <div class="offer-num">02</div>
         <div>
           <h3>Positioning &amp; Strategy</h3>
-          <p>A full strategy for your personal brand and your offer — who you're actually speaking to, what they want to hear, and the messaging and narrative that makes it land.</p>
+          <p>A full strategy for your personal brand and your offer – who you're actually speaking to, what they want to hear, and the messaging and narrative that makes it land.</p>
         </div>
       </div>
       <div class="offer">
         <div class="offer-num">03</div>
         <div>
           <h3>Content Strategy</h3>
-          <p>The positioning becomes a system — content pillars, formats, and a rhythm that's realistic to keep up.</p>
+          <p>The positioning becomes a system – content pillars, formats, and a rhythm that's realistic to keep up.</p>
         </div>
       </div>
       <div class="offer">
         <div class="offer-num">04</div>
         <div>
           <h3>Then, It Branches</h3>
-          <p>From here we decide where the story actually gets told — LinkedIn, Instagram, your website, or a combination. The channel changes; the process that got you there doesn't.</p>
+          <p>From here we decide where the story actually gets told – LinkedIn, Instagram, your website, or a combination. The channel changes; the process that got you there doesn't.</p>
         </div>
       </div>
     </div>
@@ -515,7 +533,7 @@
     <div class="branch-grid">
       <div class="branch-card">
         <h3>LinkedIn &amp; Personal Brand</h3>
-        <p>Positioning, content pillars and a system built to scale — for founders, executives or entire teams.</p>
+        <p>Positioning, content pillars and a system built to scale – for founders, executives or entire teams.</p>
         <ul>
           <li>Individual or team positioning</li>
           <li>Content pillars &amp; formats</li>
@@ -534,7 +552,7 @@
       </div>
       <div class="branch-card">
         <h3>Website Design &amp; Build</h3>
-        <p>A site that actually says who you are — copy, structure and design built from the same positioning work.</p>
+        <p>A site that actually says who you are – copy, structure and design built from the same positioning work.</p>
         <ul>
           <li>Copy &amp; structure from your story</li>
           <li>Design that matches your positioning</li>
@@ -549,7 +567,7 @@
   <div class="wrap section-pad">
     <div class="kicker">Rates</div>
     <h2 class="section-title">Transparent, and always discussed together</h2>
-    <p class="section-intro">No fixed packages — every scope, timeline and rate is worked out together before we start.</p>
+    <p class="section-intro">No fixed packages – every scope, timeline and rate is worked out together before we start.</p>
 
     <div class="rate-figure">€150 <span class="hl">–</span> €250<span style="font-size: 0.4em; font-weight: 500; color: rgba(247,246,244,0.68);"> / hour</span></div>
     <p class="rate-note">Depending on the service and scope. Exact pricing is always a conversation, not a price list.</p>
@@ -558,12 +576,12 @@
       <div class="mode-card">
         <span class="tag-label">Option One</span>
         <h3>Consulting Only</h3>
-        <p>Strategy, positioning and review — you or your team handle the execution. Good fit if you already have the capacity to write, post or build.</p>
+        <p>Strategy, positioning and review – you or your team handle the execution. Good fit if you already have the capacity to write, post or build.</p>
       </div>
       <div class="mode-card">
         <span class="tag-label">Option Two</span>
         <h3>Consulting + Execution</h3>
-        <p>I also do the work — writing the first posts, building the site, setting up the system. Based on capacity, and always scoped together upfront.</p>
+        <p>I also do the work – writing the first posts, building the site, setting up the system. Based on capacity, and always scoped together upfront.</p>
       </div>
     </div>
   </div>
@@ -573,22 +591,27 @@
   <div class="wrap">
     <div class="kicker">Some of the Work</div>
     <h2 class="section-title">A couple of examples</h2>
-    <p class="section-intro">I haven't built dozens of websites — but here's what the same story-first process looks like when it becomes a site.</p>
+    <p class="section-intro">I haven't built dozens of websites – but here's what the same story-first process looks like when it becomes a site.</p>
 
     <div class="portfolio-grid">
       <div class="portfolio-card">
+        <figure><div class="shot-placeholder">Add screenshot<br>Novu Office Proposal</div></figure>
+        <span class="tag-label">Proposal · Web Design &amp; Copy</span>
+        <h3>Novu Office Proposal</h3>
+        <p>A LinkedIn growth proposal built the same story-first way – positioning, plan and design in one page.</p>
+      </div>
+      <div class="portfolio-card">
+        <figure><div class="shot-placeholder">Add screenshot<br>PLUTO × Champion Spirit</div></figure>
         <span class="tag-label">Partner Pitch · Web Design &amp; Copy</span>
         <h3>PLUTO × Champion Spirit</h3>
-        <p>A full partner-pitch website built from scratch — positioning, story and design in one gated site, used to pitch PLUTO's Bahamas retreat to a venue partner.</p>
-        <div class="stat">Password-protected — get in touch for access</div>
+        <p>A full partner-pitch website built from scratch – positioning, story and design in one gated site.</p>
         <a class="visit" href="https://pluto-championsspirit.vercel.app/" target="_blank" rel="noopener">View the site →</a>
       </div>
       <div class="portfolio-card">
-        <span class="tag-label">Personal Site · Web Design &amp; Copy</span>
-        <h3>This Website</h3>
-        <p>The page you're on right now — positioning, copy and design, built and iterated the same way I'd approach any client site.</p>
-        <div class="stat">Live &amp; public</div>
-        <a class="visit" href="index.html">View the homepage →</a>
+        <figure><div class="shot-placeholder">Add screenshot<br>New PLUTO Website</div></figure>
+        <span class="tag-label">Brand Website · Web Design &amp; Copy</span>
+        <h3>New PLUTO Website</h3>
+        <p>The next iteration of PLUTO's own site – not live yet, currently in design.</p>
       </div>
     </div>
   </div>
