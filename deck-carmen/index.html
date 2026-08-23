@@ -565,6 +565,39 @@
     .ways-grid { grid-template-columns: 1fr; }
   }
 
+  /* ---------- SERVICES TEASER ---------- */
+  .services-teaser {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--paper);
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .services-teaser h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+  .services-teaser p { color: var(--ink-soft); font-size: 0.92rem; }
+  .services-teaser a.visit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: var(--off-white);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 12px 22px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .services-teaser a.visit:hover { background: var(--pink); color: var(--ink); }
+
   /* ---------- CURRENTLY ---------- */
   .currently {
     display: grid;
@@ -674,6 +707,7 @@
       <a href="#work">Work With Me</a>
       <a href="#built">What I've Built</a>
       <a href="#ways">Ways to Collaborate</a>
+      <a href="services.html">Services &amp; Rates</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -887,6 +921,14 @@
         <h3>Brand partnerships</h3>
         <p>Selected story-led collaborations through my own platforms and community.</p>
       </div>
+    </div>
+
+    <div class="services-teaser" style="margin-top:48px;">
+      <div>
+        <h3>Curious what it actually costs?</h3>
+        <p>Rates, ways of working, and a couple of examples of the work — all laid out on one page.</p>
+      </div>
+      <a class="visit" href="services.html">See services &amp; rates →</a>
     </div>
   </div>
 </section>

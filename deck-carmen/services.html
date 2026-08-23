@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carmen Jenny — Services &amp; Rates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #FF66C2;
+    --yellow: #E0FF66;
+    --pink-dim: rgba(255,102,194,0.10);
+    --yellow-dim: rgba(224,255,102,0.20);
+    --ink: #121212;
+    --ink-soft: #5C5C5C;
+    --off-white: #F7F6F4;
+    --paper: #FFFFFF;
+    --line: #E3E1DD;
+    --display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--off-white);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { display: block; max-width: 100%; }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  @media (max-width: 640px) {
+    .wrap { padding: 0 28px; }
+  }
+
+  section { position: relative; }
+
+  /* ---------- NAV ---------- */
+  header.nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(247,246,244,0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media (max-width: 640px) {
+    .nav-inner { padding: 18px 28px; }
+  }
+  .nav-name {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-name .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--pink);
+    display: inline-block;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--ink); }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section-pad { padding-top: 90px; padding-bottom: 90px; }
+  .section-pad.tight { padding-top: 70px; padding-bottom: 70px; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 7px 14px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--pink);
+  }
+  .kicker {
+    font-family: var(--display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .kicker::before {
+    content: '';
+    width: 26px;
+    height: 2px;
+    background: var(--pink);
+  }
+  h2.section-title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+    letter-spacing: -0.01em;
+    max-width: 26ch;
+    margin-bottom: 20px;
+  }
+  .section-intro {
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    max-width: 62ch;
+    margin-bottom: 50px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero { padding: 90px 0 70px; }
+  h1.hero-title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(2.2rem, 4.2vw, 3.2rem);
+    line-height: 1.14;
+    letter-spacing: -0.01em;
+    max-width: 18ch;
+    margin-bottom: 22px;
+  }
+  h1.hero-title .accent {
+    position: relative;
+    white-space: nowrap;
+  }
+  h1.hero-title .accent::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.06em;
+    height: 0.28em;
+    background: var(--yellow);
+    z-index: -1;
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    max-width: 56ch;
+  }
+
+  /* ---------- PROCESS STEPS ---------- */
+  .offer-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--line);
+  }
+  .offer {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 28px;
+    padding: 34px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .offer-num {
+    font-family: var(--display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+  .offer h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .offer p { color: var(--ink-soft); font-size: 0.97rem; max-width: 62ch; }
+  @media (max-width: 640px) {
+    .offer { grid-template-columns: 1fr; gap: 10px; }
+  }
+
+  /* ---------- BRANCH CARDS ---------- */
+  .branch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .branch-card {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 26px;
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .branch-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 22px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background: var(--pink);
+  }
+  .branch-card:nth-child(2)::before { background: var(--ink-soft); }
+  .branch-card:nth-child(3)::before { background: var(--ink); }
+  .branch-card h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  .branch-card p { font-size: 0.92rem; color: var(--ink-soft); }
+  .branch-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 4px;
+  }
+  .branch-card ul li {
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    padding-left: 16px;
+    position: relative;
+  }
+  .branch-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--ink);
+  }
+  @media (max-width: 800px) {
+    .branch-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- RATES BAND ---------- */
+  .band {
+    background: var(--ink);
+    color: var(--off-white);
+  }
+  .band .kicker { color: rgba(247,246,244,0.75); }
+  .band .kicker::before { background: var(--yellow); }
+  .band h2.section-title { color: var(--off-white); }
+  .band .section-intro { color: rgba(247,246,244,0.68); margin-bottom: 40px; }
+
+  .rate-figure {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  .rate-figure .hl { color: var(--yellow); }
+  .rate-note {
+    color: rgba(247,246,244,0.68);
+    font-size: 0.95rem;
+    max-width: 50ch;
+    margin-bottom: 44px;
+  }
+
+  .modes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .mode-card {
+    border: 1px solid rgba(247,246,244,0.18);
+    border-radius: 4px;
+    padding: 24px;
+  }
+  .mode-card .tag-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .mode-card h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--off-white);
+  }
+  .mode-card p {
+    font-size: 0.9rem;
+    color: rgba(247,246,244,0.68);
+  }
+  @media (max-width: 640px) {
+    .modes-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- PORTFOLIO ---------- */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .portfolio-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 2px solid var(--ink);
+    border-radius: 4px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .portfolio-card .tag-label {
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .portfolio-card h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  .portfolio-card p {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .portfolio-card .stat {
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--off-white);
+    border: 1px solid var(--line);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 100px;
+    width: fit-content;
+  }
+  .portfolio-card a.visit {
+    margin-top: auto;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    width: fit-content;
+    padding-bottom: 2px;
+  }
+  .portfolio-card a.visit:hover { color: var(--pink); border-color: var(--pink); }
+  @media (max-width: 700px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--ink);
+    color: var(--off-white);
+    padding: 70px 0 40px;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(247,246,244,0.14);
+  }
+  footer h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+    max-width: 14ch;
+  }
+  .footer-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--off-white);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 14px 26px;
+    border-radius: 100px;
+    margin-top: 22px;
+    border: 1px solid var(--off-white);
+  }
+  .footer-cta:hover { background: var(--ink); color: var(--off-white); }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding-top: 28px;
+    font-size: 0.85rem;
+    color: rgba(247,246,244,0.55);
+  }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a:hover { color: var(--yellow); }
+
+  ::selection { background: var(--ink); color: var(--off-white); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-name"><span class="dot"></span>CARMEN JENNY</a>
+    <nav class="nav-links">
+      <a href="index.html#work">Work With Me</a>
+      <a href="index.html#built">What I've Built</a>
+      <a href="index.html#ways">Ways to Collaborate</a>
+      <a href="services.html" class="active">Services &amp; Rates</a>
+      <a href="services.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Services &amp; Rates</div>
+    <h1 class="hero-title">One process. <span class="accent">Three places</span> it can go.</h1>
+    <p class="hero-sub">Whether it ends up on LinkedIn, Instagram or your own website, I build it the same way — starting with your story, not your channels. Here's exactly how I work, and what it costs.</p>
+  </div>
+</section>
+
+<section class="section-pad tight" id="process">
+  <div class="wrap">
+    <div class="kicker">How I Work</div>
+    <h2 class="section-title">The same process, every time</h2>
+    <p class="section-intro">No templates, no generic packages. Every project starts the same way — with a conversation, not a content calendar.</p>
+
+    <div class="offer-list">
+      <div class="offer">
+        <div class="offer-num">01</div>
+        <div>
+          <h3>Deep-Dive Interview</h3>
+          <p>An unscripted, recorded conversation to understand your story — where you come from, what you've actually done, and why it matters. This becomes the raw material for everything that follows.</p>
+        </div>
+      </div>
+      <div class="offer">
+        <div class="offer-num">02</div>
+        <div>
+          <h3>Positioning &amp; Strategy</h3>
+          <p>A full strategy for your personal brand and your offer — who you're actually speaking to, what they want to hear, and the messaging and narrative that makes it land.</p>
+        </div>
+      </div>
+      <div class="offer">
+        <div class="offer-num">03</div>
+        <div>
+          <h3>Content Strategy</h3>
+          <p>The positioning becomes a system — content pillars, formats, and a rhythm that's realistic to keep up.</p>
+        </div>
+      </div>
+      <div class="offer">
+        <div class="offer-num">04</div>
+        <div>
+          <h3>Then, It Branches</h3>
+          <p>From here we decide where the story actually gets told — LinkedIn, Instagram, your website, or a combination. The channel changes; the process that got you there doesn't.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad tight">
+  <div class="wrap">
+    <div class="kicker">Where It Can Go</div>
+    <h2 class="section-title">Three directions, same foundation</h2>
+
+    <div class="branch-grid">
+      <div class="branch-card">
+        <h3>LinkedIn &amp; Personal Brand</h3>
+        <p>Positioning, content pillars and a system built to scale — for founders, executives or entire teams.</p>
+        <ul>
+          <li>Individual or team positioning</li>
+          <li>Content pillars &amp; formats</li>
+          <li>Ghostwriting or coaching</li>
+          <li>Community &amp; engagement systems</li>
+        </ul>
+      </div>
+      <div class="branch-card">
+        <h3>Instagram</h3>
+        <p>The same story-first approach, applied to a more visual, personal channel.</p>
+        <ul>
+          <li>Positioning for the platform</li>
+          <li>Content pillars &amp; formats</li>
+          <li>Working with what you already have</li>
+        </ul>
+      </div>
+      <div class="branch-card">
+        <h3>Website Design &amp; Build</h3>
+        <p>A site that actually says who you are — copy, structure and design built from the same positioning work.</p>
+        <ul>
+          <li>Copy &amp; structure from your story</li>
+          <li>Design that matches your positioning</li>
+          <li>Built and shipped, not just designed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap section-pad">
+    <div class="kicker">Rates</div>
+    <h2 class="section-title">Transparent, and always discussed together</h2>
+    <p class="section-intro">No fixed packages — every scope, timeline and rate is worked out together before we start.</p>
+
+    <div class="rate-figure">€150 <span class="hl">–</span> €250<span style="font-size: 0.4em; font-weight: 500; color: rgba(247,246,244,0.68);"> / hour</span></div>
+    <p class="rate-note">Depending on the service and scope. Exact pricing is always a conversation, not a price list.</p>
+
+    <div class="modes-grid">
+      <div class="mode-card">
+        <span class="tag-label">Option One</span>
+        <h3>Consulting Only</h3>
+        <p>Strategy, positioning and review — you or your team handle the execution. Good fit if you already have the capacity to write, post or build.</p>
+      </div>
+      <div class="mode-card">
+        <span class="tag-label">Option Two</span>
+        <h3>Consulting + Execution</h3>
+        <p>I also do the work — writing the first posts, building the site, setting up the system. Based on capacity, and always scoped together upfront.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" id="work-examples">
+  <div class="wrap">
+    <div class="kicker">Some of the Work</div>
+    <h2 class="section-title">A couple of examples</h2>
+    <p class="section-intro">I haven't built dozens of websites — but here's what the same story-first process looks like when it becomes a site.</p>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <span class="tag-label">Partner Pitch · Web Design &amp; Copy</span>
+        <h3>PLUTO × Champion Spirit</h3>
+        <p>A full partner-pitch website built from scratch — positioning, story and design in one gated site, used to pitch PLUTO's Bahamas retreat to a venue partner.</p>
+        <div class="stat">Password-protected — get in touch for access</div>
+        <a class="visit" href="https://pluto-championsspirit.vercel.app/" target="_blank" rel="noopener">View the site →</a>
+      </div>
+      <div class="portfolio-card">
+        <span class="tag-label">Personal Site · Web Design &amp; Copy</span>
+        <h3>This Website</h3>
+        <p>The page you're on right now — positioning, copy and design, built and iterated the same way I'd approach any client site.</p>
+        <div class="stat">Live &amp; public</div>
+        <a class="visit" href="index.html">View the homepage →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-top">
+      <h2>Let's figure out where your story goes.</h2>
+      <a class="footer-cta" href="mailto:hello@carmen-jenny.com">Get in touch →</a>
+    </div>
+    <div class="footer-bottom">
+      <div class="locations">Berlin · Zurich · Remote</div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/carmen-jenny/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/carmitive/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
